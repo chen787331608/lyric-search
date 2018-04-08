@@ -1,0 +1,6 @@
+# Python binaries
+*.pyc
+
+# download data
+/lyc_data/*.json
+/lyc_data/*.txt
