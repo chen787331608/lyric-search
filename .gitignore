@@ -4,3 +4,6 @@
 # download data
 /lyc_data/*.json
 /lyc_data/*.txt
+
+# log
+*.log
