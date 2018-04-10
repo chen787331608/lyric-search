@@ -7,3 +7,9 @@
 
 # log
 *.log
+
+# Web environment
+/web/env
+
+# local settings
+/web/local_settings.py
