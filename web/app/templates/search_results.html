@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block result %}
+<div id="search_results">
+    <div class="container background">
+        <p title="{{query}} 匹配数：{{count}}">{{query}} 匹配数：{{count}}</p>
+    </div>
+</div>
+{{pagination.info}}
+{{pagination.links}}
+<div class='so'>
+    <table class="table table-bordered table-hover">
+                <thead>
+                        <tr>
+                            <th>结果</th>
+                        </tr>
+                </thead>
+                 <tbody>
+                        {% for sample in search_results %}
+                        {% include 'search_element.html' %}
+                        {% endfor %}
+                 </tbody>
+    </table>
+</div>
+{% endblock %}

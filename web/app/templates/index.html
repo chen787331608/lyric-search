@@ -1,24 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="home" class="container">
-    <div class="row">
-        <div id="logo"></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-8 col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-2">
-            <form class="form-inline" action="{{url_for('search')}}" method="post" name="search">
-                <div class="form-group">
-                </div>
-            </form>
-        </div>
-        <div class="col-xs-1 col-md-1 col-sm-1">
-            <div class="home-search">
-                <button id="submit">检索</button>
-                <p><a href="./field-search-home">常规检索>></a></p>
-            </div>
-        </div>
-    </div>
+<header>
+    <h1><a href="/">歌词搜索</a></h1>
+    <form class="search" action="/search" method="post">
+        <input id="kewords" name="query" type="text" value="请输入要搜索的歌词内容" />
+        <input id="submit" type="submit" value="歌词搜索" />
+    </form>
+</header>
 
-</div>
 
+{% block result %}
+{% endblock %}
 {% endblock %}
