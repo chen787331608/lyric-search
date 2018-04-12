@@ -26,22 +26,24 @@ def search():
 @app.route('/search-results/<path:query>')
 def search_results(query):
     page = int(request.args.get('page', 1))
+    per_page = app.config['PER_PAGE']
 
     body = search_body(query)
     response = es.search(
             index=app.config['ES_INDEX'],
             # doc_type='',
-            from_=(page-1)*20,
-            size=20,
+            from_=(page-1)*per_page,
+            size=per_page,
             body=body
             )
     search_results = response['hits']['hits']
     results_count = response['hits']['total']
 
     pagination = Pagination(
+            css_framework=app.config['CSS_FRAMEWORK'],
             page=page,
             total=results_count,
-            per_page=20)
+            per_page=per_page)
     return render_template('search_results.html',
             query=query,
             search_results=search_results,

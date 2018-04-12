@@ -5,8 +5,10 @@
         <p title="{{query}} 匹配数：{{count}}">{{query}} 匹配数：{{count}}</p>
     </div>
 </div>
-{{pagination.info}}
-{{pagination.links}}
+<div class='page'>
+    {{pagination.info}}
+    {{pagination.links}}
+</div>
 <div class='so'>
     <table class="table table-bordered table-hover">
                 <thead>
@@ -20,5 +22,8 @@
                         {% endfor %}
                  </tbody>
     </table>
+</div>
+<div class='page'>
+{{pagination.links}}
 </div>
 {% endblock %}

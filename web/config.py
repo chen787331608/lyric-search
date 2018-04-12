@@ -10,6 +10,10 @@ TEMPLATES_AUTO_RELOAD = True
 ELASTICSEARCH_HOST = "127.0.0.1:9200"
 ES_INDEX = 'lyc_demo'
 
+CSS_FRAMEWORK = 'bootstrap3'
+
+PER_PAGE=20
+
 # For local settings >>>
 try:
     from local_settings import *
