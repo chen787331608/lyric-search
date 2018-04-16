@@ -4,10 +4,19 @@
 
 import re
 
-fields = ["singer", "name", "lyc"]
+fields = ["singer", "name", "lyric"]
 
 def highlight_term():
-    return {}
+    return {
+            "highlight":{
+                "pre_tags": ["<b>"],
+                "post_tags": ["</b>"],
+                "fields": {
+                    "name": {"number_of_fragments": 0},
+                    "lyric": {"number_of_fragments": 0}
+                    }
+                }
+            }
 
 
 def aggs_term():
