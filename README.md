@@ -1,4 +1,5 @@
 # 歌词检索Demo
+#### [测试Demo](http://118.24.45.23:8085/)
 
 ### 一、说明
 - 爬虫采用python的scrapy + BeautifulSoup解析
@@ -29,3 +30,14 @@ var b = host + "/artist/indexAjax?category=" + index + "&prefix=" + $("#artistCo
 Docker页面：https://hub.docker.com/_/elasticsearch/
 ##### docker部署方法
 中文参考  http://kael-aiur.com/docker/%E5%9C%A8docker%E4%B8%8A%E8%BF%90%E8%A1%8Celasticsearch.html
+
+### 五、构建web （python3）
+ 
+```bash
+# 进入web目录
+cd web
+# 配置flask环境
+pip install -r requirements.txt
+# 运行web app 
+python run.py --port 8085
+```
