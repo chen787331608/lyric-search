@@ -40,10 +40,10 @@ a:hover
 
 header,nav,article,footer,section
 {
-	width:77%;
+	/* width:77%; */
 	display:block;
 	overflow:hidden;
-	margin:auto;
+	/* margin:auto; */
 }
 
 header
