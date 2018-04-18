@@ -6,6 +6,7 @@ import os
 import json
 import gc
 import logging
+import uuid
 from time import time, sleep
 from elasticsearch import helpers
 from elasticsearch import Elasticsearch
@@ -48,7 +49,7 @@ if __name__ == '__main__':
                 action = {
                             "_index": "lyc_demo",
                             "_type": "sample",
-                            # "_id": "",
+                            "_id": uuid.uuid5(uuid.NAMESPACE_URL, filename),
                             "_source": lyc_dic
                          }
                 actions.append(action)
