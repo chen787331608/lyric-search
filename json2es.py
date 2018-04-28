@@ -47,7 +47,7 @@ if __name__ == '__main__':
                 lyc_dic = json.loads(lyc_file)
                 # print(lyc_dic['name'])
                 action = {
-                            "_index": "lyc_demo",
+                            "_index": "lyc_ik",
                             "_type": "sample",
                             "_id": uuid.uuid5(uuid.NAMESPACE_URL, filename),
                             "_source": lyc_dic

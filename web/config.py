@@ -8,7 +8,7 @@ WTF_CSRF_ENABLED = True
 TEMPLATES_AUTO_RELOAD = True
 
 ELASTICSEARCH_HOST = "127.0.0.1:9200"
-ES_INDEX = 'lyc_demo'
+ES_INDEX = 'lyc_ik'
 
 CSS_FRAMEWORK = 'bootstrap3'
 

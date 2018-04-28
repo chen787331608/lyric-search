@@ -31,6 +31,52 @@ Docker页面：https://hub.docker.com/_/elasticsearch/
 ##### docker部署方法
 中文参考  http://kael-aiur.com/docker/%E5%9C%A8docker%E4%B8%8A%E8%BF%90%E8%A1%8Celasticsearch.html
 
+##### 加入 ik-analysis
+> https://github.com/medcl/elasticsearch-analysis-ik  *IK Analysis for Elasticsearch*
+##### ES mappings
+```json
+{
+  "properties": {
+    "album": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "href": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "lyric": {
+      "type": "text",
+      "analyzer": "ik_smart"
+    },
+    "name": {
+      "type": "text",
+      "analyzer": "ik_max_word"
+    },
+    "singer": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    }
+  }
+}
+```
+导入脚本 [json2es.py](json2es.py)
+
 ### 五、构建web （python3）
  
 ```bash
