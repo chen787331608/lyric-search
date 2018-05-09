@@ -5,4 +5,12 @@
     <li>“歌词”：
         {{sample._source.lyric}}
     </li>
+    <li>
+        “命中歌词”：
+        {% if sample.highlight %}
+        {% for lyc in sample.highlight.lyric %}
+            ...{{lyc | safe}}
+        {% endfor  %}
+        {% endif %}
+    </li>
 </ul>
